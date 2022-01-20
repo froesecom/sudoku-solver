@@ -13,6 +13,7 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "ts-node index.ts",
+    "type-check": "tsc --noEmit"
   }
 }
