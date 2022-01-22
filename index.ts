@@ -1,8 +1,5 @@
 import { Cell, Puzzle, Grid } from './src/types'
 
-const SQUARE_WIDTH = 3
-const GRID_SIZE = [SQUARE_WIDTH * 3, SQUARE_WIDTH * 3]
-
 const defaultCell: Cell = {
   possibilities: [1, 2, 3, 4, 5, 6, 7, 8, 9], // TODO: this needs to be built off GRID_SIZE
   actual: null
@@ -20,6 +17,7 @@ const PUZZLE: Puzzle = [
   [null, 5, 6, null, null, null, 1, 3, 2]
 ]
 
+// TODO: pass in puzzle as a file path
 const buildGrid = (puzzle: Puzzle): Grid => {
   return [...puzzle].map((row) => {
     return row.map((cell) => {
