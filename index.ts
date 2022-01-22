@@ -1,13 +1,7 @@
+import { Cell, Puzzle, Grid } from './src/types'
+
 const SQUARE_WIDTH = 3
 const GRID_SIZE = [SQUARE_WIDTH * 3, SQUARE_WIDTH * 3]
-
-interface Cell {
-  possibilities: Number[]
-  actual: null | Number
-}
-
-type Grid = Cell[][]
-type Puzzle = (Number | null)[][]
 
 const defaultCell: Cell = {
   possibilities: [1, 2, 3, 4, 5, 6, 7, 8, 9], // TODO: this needs to be built off GRID_SIZE
