@@ -1,9 +1,5 @@
-import { Cell, Puzzle, Grid } from './src/types'
-
-const defaultCell: Cell = {
-  possibilities: [1, 2, 3, 4, 5, 6, 7, 8, 9], // TODO: this needs to be built off GRID_SIZE
-  actual: null
-}
+import { Puzzle, Grid } from './src/types'
+import { defaultCell } from './src/config'
 
 const PUZZLE: Puzzle = [
   [null, null, 6, null, null, 5, null, null, null],
