@@ -1,7 +1,6 @@
 import { Grid, Cell } from './types'
-
-// required for 'square' traverse option
 import { SQUARE_WIDTH, GRID_SIZE } from './config'
+import { GridSize } from './types'
 
 type TraverseDirection = 'row' | 'column' | 'square'
 
@@ -12,11 +11,11 @@ interface BaseTraverseOptions {
 }
 
 interface LinearTraverseOptions extends BaseTraverseOptions {
-  gridSize?: typeof GRID_SIZE
+  gridSize: GridSize
 }
 
 interface SquareTraverseOptions extends BaseTraverseOptions {
-  squareWidth?: typeof SQUARE_WIDTH
+  squareWidth: typeof SQUARE_WIDTH
 }
 
 type TraverseOptions = LinearTraverseOptions & SquareTraverseOptions
@@ -27,7 +26,11 @@ const traverseRow = ({
   coordinate,
   gridSize
 }: LinearTraverseOptions): any => {
-  // TODO: implement traverseRow
+  const [x, y] = coordinate
+  const row = grid[y]
+  for (let i = x; i < gridSize[0]; i++) {
+    callback(row[i])
+  }
 }
 
 export const traverse = (

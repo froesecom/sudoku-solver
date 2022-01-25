@@ -4,4 +4,5 @@ export interface Cell {
 }
 
 export type Grid = Cell[][]
+export type GridSize = [number, number]
 export type Puzzle = (Number | null)[][]
